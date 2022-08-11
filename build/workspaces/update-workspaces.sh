@@ -114,11 +114,12 @@ if [ "$with_system_premake5" = "false" ]; then
   ${MAKE} -C $PREMAKE_BUILD_DIR ${JOBS} || die "Premake build failed"
 
   premake_command="premake5/bin/release/premake5"
+  cd ..
 fi
 
 echo
 
-cd ..
+cd ../premake
 
 # If we're in bash then make HOSTTYPE available to Premake, for primitive arch-detection
 export HOSTTYPE="$HOSTTYPE"
