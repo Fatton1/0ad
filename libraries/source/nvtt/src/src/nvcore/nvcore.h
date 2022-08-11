@@ -105,6 +105,8 @@
 #   define NV_CPU_X86_64 1
 #elif defined POSH_CPU_X86
 #   define NV_CPU_X86 1
+#elif defined POSH_CPU_E2K
+#   define NV_CPU_E2K 1
 #elif defined POSH_CPU_PPC
 #   define NV_CPU_PPC 1
 #elif defined POSH_CPU_STRONGARM

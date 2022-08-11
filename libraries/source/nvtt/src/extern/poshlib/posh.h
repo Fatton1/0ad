@@ -530,6 +530,11 @@ LLVM:
 #  endif
 #endif
 
+#if defined __e2k__
+#  define POSH_CPU_E2K 1
+#  define POSH_CPU_STRING "E2K"
+#endif
+
 #if defined __alpha || defined alpha || defined _M_ALPHA || defined __alpha__
 #  define POSH_CPU_AXP 1
 #  define POSH_CPU_STRING "AXP"

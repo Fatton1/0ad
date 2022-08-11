@@ -662,6 +662,9 @@ namespace
 #  elif NV_CPU_X86
         ucontext_t * ucp = (ucontext_t *)secret;
         return (void *)ucp->uc_mcontext.gregs[14/*REG_EIP*/];
+#  elif NV_CPU_E2K
+        ucontext_t * ucp = (ucontext_t *)secret;
+        return (void *)ucp->uc_mcontext.tir_lo[1];
 #  elif NV_CPU_PPC
         ucontext_t * ucp = (ucontext_t *)secret;
         return (void *) ucp->uc_mcontext.regs->nip;

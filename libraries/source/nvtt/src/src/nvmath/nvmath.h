@@ -14,7 +14,7 @@
 #include <float.h>  // finite, isnan
 #endif
 
-#if NV_CPU_X86 || NV_CPU_X86_64
+#if NV_CPU_X86 || NV_CPU_X86_64 || NV_CPU_E2K 
     //#include <intrin.h>
     #include <xmmintrin.h>
 #endif
@@ -42,7 +42,7 @@
 #endif
 
 #ifndef NV_USE_SSE
-#   if NV_CPU_X86_64
+#   if NV_CPU_X86_64 || NV_CPU_E2K
         // x64 always supports at least SSE2
 #       define NV_USE_SSE 2
 #   elif NV_CC_MSVC && defined(_M_IX86_FP)
