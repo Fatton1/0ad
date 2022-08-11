@@ -25,6 +25,9 @@
 #include "Render.h"
 #include "graphics/SColor.h"
 
+#include <map>
+#include <set>
+
 /**
  * Hierarchical pathfinder.
  *

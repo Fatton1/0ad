@@ -26,6 +26,8 @@
 #include "simulation2/helpers/Grid.h"
 #include "simulation2/helpers/PriorityQueue.h"
 
+#include <map>
+
 /**
  * Represents the 2D coordinates of a tile.
  * The i/j components are packed into a single u32, since we usually use these
