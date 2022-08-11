@@ -25,8 +25,10 @@
 #include "ps/CStr.h"
 
 #if HAVE_SSE
-# include <xmmintrin.h>
-# include "lib/sysdep/arch/x86_x64/x86_x64.h"
+#  include <xmmintrin.h>
+#  if ARCH_X86_X64
+#    include "lib/sysdep/arch/x86_x64/x86_x64.h"
+#  endif
 #endif
 
 static SColor4ub fallback_ConvertRGBColorTo4ub(const RGBColor& src)
@@ -78,7 +80,9 @@ static SColor4ub sse_ConvertRGBColorTo4ub(const RGBColor& src)
 void ColorActivateFastImpl()
 {
 #if HAVE_SSE
+       #if ARCH_X86_X64
 	if (x86_x64::Cap(x86_x64::CAP_SSE))
+       #endif
 	{
 		ConvertRGBColorTo4ub = sse_ConvertRGBColorTo4ub;
 		return;

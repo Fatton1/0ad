@@ -48,14 +48,16 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // ModelRenderer implementation
 
-#if ARCH_X86_X64
+#if HAVE_SSE
 static bool g_EnableSSE = false;
 #endif
 
 void ModelRenderer::Init()
 {
-#if ARCH_X86_X64
+#if HAVE_SSE
+        #if ARCH_X86_X64
 	if (x86_x64::Cap(x86_x64::CAP_SSE))
+        #endif
 		g_EnableSSE = true;
 #endif
 }
